@@ -39,12 +39,13 @@ public class AfficherQuestionsServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
-		 * 
-		request.getParameter(arg0)
-		QuestionService service = new QuestionService();
-		*/
-		RequestDispatcher rd = request.getRequestDispatcher("listerQuestions.jsp");
+		
+		
+		int idQCM = Integer.parseInt(request.getParameter("radioQCM"));
+		
+		//QuestionService service = new QuestionService();
+		
+		RequestDispatcher rd = request.getRequestDispatcher("listeQuestions.jsp");
 		rd.forward(request, response);
 	}
 
