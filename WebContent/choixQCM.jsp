@@ -24,7 +24,7 @@
 				<form action="AfficherQuestionsServlet">
 				<c:forEach var="qcm" items="${listeQCM}">
 					<div class="row formListQcm radio">
-	 					<label><input type="radio" value=${qcm.id} name="radioQCM">${qcm.libelle} (${qcm.type})</label>		
+	 					<label><input type="radio" value="${qcm.id}" name="radioQCM">${qcm.libelle} (${qcm.type})</label>		
 					</div>
 				</c:forEach>	
 				<div class="row formListQcm">
