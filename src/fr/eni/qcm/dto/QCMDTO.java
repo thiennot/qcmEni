@@ -1,5 +1,6 @@
 package fr.eni.qcm.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QCMDTO {
@@ -8,8 +9,8 @@ public class QCMDTO {
 	private List<ThemeDTO> themes;
 	
 	public QCMDTO(){
-		
-	}
+		this.themes = new ArrayList<ThemeDTO>();
+		}
 
 	public int getId() {
 		return id;
