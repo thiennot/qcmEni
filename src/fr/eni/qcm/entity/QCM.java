@@ -8,11 +8,6 @@ import java.util.Date;
  *
  */
 public class QCM {
-
-	/**
-	 * Id de la section
-	 */
-	private int idSection;
 	
 	/**
 	 * Id du QCM
@@ -40,18 +35,10 @@ public class QCM {
 	private Date dateQcm;
 
 	/**
-	 * @return the idSection
+	 * Id de la section
 	 */
-	public int getIdSection() {
-		return idSection;
-	}
-
-	/**
-	 * @param idSection the idSection to set
-	 */
-	public void setIdSection(int idSection) {
-		this.idSection = idSection;
-	}
+	private Section section;
+	
 
 	/**
 	 * @return the idQcm
@@ -121,6 +108,14 @@ public class QCM {
 	 */
 	public void setDateQcm(Date dateQcm) {
 		this.dateQcm = dateQcm;
+	}
+
+	public Section getSection() {
+		return section;
+	}
+
+	public void setSection(Section section) {
+		this.section = section;
 	}
 	
 	
