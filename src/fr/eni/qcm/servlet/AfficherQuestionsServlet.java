@@ -39,10 +39,11 @@ public class AfficherQuestionsServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		QCMService service = new QCMService();
-		List<QCMDTO> list = service.listerQCM();
-		
-		request.setAttribute("listeQCM", list);
+		/*
+		 * 
+		request.getParameter(arg0)
+		QuestionService service = new QuestionService();
+		*/
 		RequestDispatcher rd = request.getRequestDispatcher("listerQuestions.jsp");
 		rd.forward(request, response);
 	}
