@@ -1,4 +1,4 @@
-package fr.eni.qcm.dao;
+package fr.eni.qcm.dao.qcm;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,7 +10,7 @@ import fr.eni.qcm.entity.Reponse;
 import fr.eni.qcm.entity.Section;
 import fr.eni.qcm.entity.Theme;
 
-public class QCMMocks implements IQCM {
+class QCMMocks implements IQCM {
 
 	@Override
 	public List<QCM> getQcm() {

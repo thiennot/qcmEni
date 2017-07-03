@@ -1,4 +1,4 @@
-package fr.eni.qcm.dao;
+package fr.eni.qcm.dao.qcm;
 
 import java.util.List;
 
