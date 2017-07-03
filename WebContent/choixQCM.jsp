@@ -22,15 +22,11 @@
 			<div class="col-sm-4">
 				<h1 class="formListQcm">Choisir un QCM</h1>
 				<form action="AfficherQuestionsServlet">
-				<div class="row formListQcm radio">
- 					<label><input type="radio" value="" name="radioQCM">Radio 1</label>		
-				</div>
-				<div class="row formListQcm radio">
- 					<label><input type="radio" value="" name="radioQCM">Radio 2</label>		
-				</div>
-				<div class="row formListQcm radio">
- 					<label><input type="radio" value="" name="radioQCM">Radio 3</label>		
-				</div>
+				<c:forEach var="qcm" items="${listeQCM}">
+					<div class="row formListQcm radio">
+	 					<label><input type="radio" value=${qcm.id} name="radioQCM">${qcm.libelle} (${qcm.type})</label>		
+					</div>
+				</c:forEach>	
 				<div class="row formListQcm">
 					<button type="submit" class="btn btn-default">Débuter le test</button>
 				</div>
