@@ -16,7 +16,7 @@ import fr.eni.qcm.service.QCMService;
 /**
  * Servlet implementation class listerQCMServlet
  */
-@WebServlet("/listerQCMServlet")
+@WebServlet("/ListerQCMServlet")
 public class ListerQCMServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
