@@ -28,6 +28,7 @@ public class QCMMocks implements IQCM {
 		qcm.setDateQcm(new Date());
 		qcm.setNombreQuestion(20);
 		qcm.setTempsQCM(10);
+		qcm.setNomQcm("Test " + id);
 		
 		
 		Section section = new Section();
