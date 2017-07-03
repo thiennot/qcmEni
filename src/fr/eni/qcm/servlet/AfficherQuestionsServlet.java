@@ -17,7 +17,7 @@ import fr.eni.qcm.dto.QCMDTO;
 /**
  * Servlet implementation class listerQCMServlet
  */
-@WebServlet("/listerQCMServlet")
+@WebServlet("/AfficherQuestionsServlet")
 public class AfficherQuestionsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
