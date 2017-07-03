@@ -42,7 +42,7 @@ public class ListerQCMServlet extends HttpServlet {
 		
 		
 		//request.getAttribute("listeQCM",list);
-		RequestDispatcher rd = request.getRequestDispatcher("listerQCM.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("choixQCM.jsp");
 		rd.forward(request, response);
 	}
 

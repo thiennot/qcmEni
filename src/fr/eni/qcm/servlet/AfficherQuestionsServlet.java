@@ -43,7 +43,7 @@ public class AfficherQuestionsServlet extends HttpServlet {
 		List<QCMDTO> list = service.listerQCM();
 		
 		request.setAttribute("listeQCM", list);
-		RequestDispatcher rd = request.getRequestDispatcher("choixQCM.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("listerQuestions.jsp");
 		rd.forward(request, response);
 	}
 
