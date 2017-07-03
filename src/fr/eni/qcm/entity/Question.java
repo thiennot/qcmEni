@@ -7,10 +7,19 @@ package fr.eni.qcm.entity;
  */
 public class Question {
 
+	/**
+	 * id question
+	 */
 	private int idQuestion;
 	
+	/**
+	 * nom question
+	 */
 	private String nomQuestion;
 	
+	/**
+	 * le theme
+	 */
 	private Theme theme;
 
 	public int getIdQuestion() {
