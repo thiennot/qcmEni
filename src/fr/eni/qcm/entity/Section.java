@@ -1,13 +1,30 @@
 package fr.eni.qcm.entity;
 
+/**
+ * Entite Section
+ * @author mvinet
+ *
+ */
 public class Section {
 
+	/**
+	 * id de la section
+	 */
 	private int idSection;
 	
+	/**
+	 * nom de la section
+	 */
 	private String nomSection;
 	
+	/**
+	 * nombre de question
+	 */
 	private int nombreQuestion;
 	
+	/**
+	 * le theme
+	 */
 	private Theme theme;
 
 	/**

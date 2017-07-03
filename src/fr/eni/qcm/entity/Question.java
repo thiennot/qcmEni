@@ -1,5 +1,7 @@
 package fr.eni.qcm.entity;
 
+import java.util.List;
+
 /**
  * Entity Question
  * @author mvinet
@@ -16,6 +18,11 @@ public class Question {
 	 * nom question
 	 */
 	private String nomQuestion;
+	
+	/**
+	 * Liste des réponses disponible
+	 */
+	private List<Reponse> reponse;
 	
 	/**
 	 * le theme
@@ -44,6 +51,20 @@ public class Question {
 
 	public void setTheme(Theme theme) {
 		this.theme = theme;
+	}
+
+	/**
+	 * @return the reponse
+	 */
+	public List<Reponse> getReponse() {
+		return reponse;
+	}
+
+	/**
+	 * @param reponse the reponse to set
+	 */
+	public void setReponse(List<Reponse> reponse) {
+		this.reponse = reponse;
 	}
 	
 	

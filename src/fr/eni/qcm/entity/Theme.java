@@ -1,15 +1,39 @@
 package fr.eni.qcm.entity;
 
+import java.util.List;
+
+/**
+ * Entity Theme
+ * @author mvinet
+ *
+ */
 public class Theme {
 
+	/**
+	 * id du theme
+	 */
 	private int idTheme;
 	
+	/**
+	 * le code du theme
+	 */
 	private String codeTheme;
 	
+	/**
+	 * le libelle du theme
+	 */
 	private String libelleTheme;
 	
+	/**
+	 * la description du theme
+	 */
 	private String descriptionTheme;
 
+	/**
+	 * les questions du theme
+	 */
+	private List<Question> questions;
+	
 	/**
 	 * @return the idTheme
 	 */
@@ -64,6 +88,20 @@ public class Theme {
 	 */
 	public void setDescriptionTheme(String descriptionTheme) {
 		this.descriptionTheme = descriptionTheme;
+	}
+
+	/**
+	 * @return the questions
+	 */
+	public List<Question> getQuestions() {
+		return questions;
+	}
+
+	/**
+	 * @param questions the questions to set
+	 */
+	public void setQuestions(List<Question> questions) {
+		this.questions = questions;
 	}
 	
 	

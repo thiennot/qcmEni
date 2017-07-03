@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 import fr.eni.qcm.entity.QCM;
+import fr.eni.qcm.entity.Question;
+import fr.eni.qcm.entity.Reponse;
 import fr.eni.qcm.entity.Section;
 import fr.eni.qcm.entity.Theme;
 
@@ -43,25 +45,48 @@ public class QCMMocks implements IQCM {
 		section2.setNomSection("Test");
 
 		
-		Theme theme1 = new  Theme();
-		theme1.setCodeTheme("TestTheme");
-		theme1.setDescriptionTheme("Test description");
-		theme1.setIdTheme(id);
-		theme1.setLibelleTheme("Libelle theme");
-		section1.setTheme(theme1);
+		Theme theme = new  Theme();
+		theme.setCodeTheme("TestTheme");
+		theme.setDescriptionTheme("Test description");
+		theme.setIdTheme(id);
+		theme.setLibelleTheme("Libelle theme");
 		
+		List<Reponse> response = new ArrayList<Reponse>();
+		List<Question> questions = new ArrayList<Question>();
 
-		Theme theme2 = new  Theme();
-		theme2.setCodeTheme("TestTheme");
-		theme2.setDescriptionTheme("Test description");
-		theme2.setIdTheme(id);
-		theme2.setLibelleTheme("Libelle theme");
-		section2.setTheme(theme2);
+		Question q = new Question();
+		q.setIdQuestion(1);
+		q.setNomQuestion("Les poules ont t'il des dents ?");
+		q.setTheme(theme);
+		
+		Reponse r = new Reponse();
+		r.setCorrect(false);
+		r.setIdReponse(1);
+		r.setNomReponse("Oui");
+		r.setQuestion(q);
+		response.add(r);
+		
+		Reponse r1 = new Reponse();
+		r.setCorrect(true);
+		r.setIdReponse(2);
+		r.setNomReponse("Non");
+		r.setQuestion(q);
+		response.add(r1);
+		
+		q.setReponse(response);
+		questions.add(q);
+		
+		theme.setQuestions(questions);
+		
+		section1.setTheme(theme);
+		section2.setTheme(theme);
 		
 		lesSections.add(section1);
 		lesSections.add(section2);
 		
 		qcm.setSection(lesSections);
+
+		
 		
 		return qcm;
 	}
