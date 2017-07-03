@@ -14,7 +14,7 @@ public class QCMMocks implements IQCM {
 	public List<QCM> getQcm() {
 		List<QCM> list = new ArrayList<QCM>();
 		
-		for(int i = 0; i > 5; i++) {
+		for(int i = 0; i <= 5; i++) {
 			list.add(getQCM(i));
 		}
 		

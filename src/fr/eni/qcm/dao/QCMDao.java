@@ -35,12 +35,12 @@ public class QCMDao implements IQCM {
 	
 	@Override
 	public List<QCM> getQcm() {
-		return null;
+		return instance.getQcm();
 	}
 
 	@Override
 	public QCM getQCM(int id) {
-		return null;
+		return instance.getQCM(id);
 	}
 	
 }
