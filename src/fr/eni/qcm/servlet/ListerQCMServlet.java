@@ -17,13 +17,13 @@ import fr.eni.qcm.service.QCMService;
  * Servlet implementation class listerQCMServlet
  */
 @WebServlet("/listerQCMServlet")
-public class listerQCMServlet extends HttpServlet {
+public class ListerQCMServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * Default constructor. 
      */
-    public listerQCMServlet() {
+    public ListerQCMServlet() {
         // TODO Auto-generated constructor stub
     }
 
