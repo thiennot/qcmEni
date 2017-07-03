@@ -6,19 +6,26 @@ import java.util.List;
 import fr.eni.qcm.dao.IQCM;
 import fr.eni.qcm.dao.QCMDao;
 import fr.eni.qcm.dto.QCMDTO;
+import fr.eni.qcm.dto.ThemeDTO;
 import fr.eni.qcm.entity.QCM;
+import fr.eni.qcm.entity.Section;
+import fr.eni.qcm.entity.Theme;
 
 public class QCMService {
 	public List<QCMDTO> listerQCM(){
 		IQCM dao = QCMDao.getInstance(); 
 		List<QCM> Qcm = dao.getQcm();
 		List<QCMDTO> res = new ArrayList<QCMDTO>();
-		System.out.println(Qcm.size());
+
 		for (QCM unQcm : Qcm) {
 			QCMDTO dto = new QCMDTO();
 			dto.setId(unQcm.getIdQcm());
 			dto.setLibelle(unQcm.getNomQcm());
-			dto.setType(unQcm.getSection().getTheme().getLibelleTheme());
+			for (Section sec : unQcm.getSection()) {
+				ThemeDTO thdto = new ThemeDTO();
+				thdto.setLibelle(sec.getTheme().getLibelleTheme());
+				dto.addTheme(thdto);
+			}		
 			res.add(dto);
 		}
 		

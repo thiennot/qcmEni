@@ -1,9 +1,11 @@
 package fr.eni.qcm.dto;
 
+import java.util.List;
+
 public class QCMDTO {
 	private int id;
 	private String libelle;
-	private String type;
+	private List<ThemeDTO> themes;
 	
 	public QCMDTO(){
 		
@@ -25,12 +27,12 @@ public class QCMDTO {
 		this.libelle = libelle;
 	}
 
-	public String getType() {
-		return type;
+	public List<ThemeDTO> getThemes() {
+		return this.themes;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void addTheme(ThemeDTO theme) {
+		this.themes.add(theme);
 	}
 
 

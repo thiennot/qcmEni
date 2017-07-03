@@ -43,7 +43,6 @@ public class ListerQCMServlet extends HttpServlet {
 		
 		QCMService service = new QCMService();
 		List<QCMDTO> list = service.listerQCM();
-		System.out.println(list.size());
 		request.setAttribute("listeQCM", list);
 
 		RequestDispatcher rd = request.getRequestDispatcher("choixQCM.jsp");
