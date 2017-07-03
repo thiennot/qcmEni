@@ -1,6 +1,7 @@
 package fr.eni.qcm.entity;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Entite QCM
@@ -37,7 +38,7 @@ public class QCM {
 	/**
 	 * Id de la section
 	 */
-	private Section section;
+	private List<Section> section;
 	
 
 	/**
@@ -110,14 +111,18 @@ public class QCM {
 		this.dateQcm = dateQcm;
 	}
 
-	public Section getSection() {
+	/**
+	 * @return the section
+	 */
+	public List<Section> getSection() {
 		return section;
 	}
 
-	public void setSection(Section section) {
+	/**
+	 * @param section the section to set
+	 */
+	public void setSection(List<Section> section) {
 		this.section = section;
 	}
-	
-	
 	
 }

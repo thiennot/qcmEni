@@ -30,20 +30,38 @@ public class QCMMocks implements IQCM {
 		qcm.setTempsQCM(10);
 		qcm.setNomQcm("Test " + id);
 		
+		List<Section> lesSections = new ArrayList<Section>();
 		
-		Section section = new Section();
-		section.setIdSection(id);
-		section.setNombreQuestion(20);
-		section.setNomSection("Test");
+		Section section1 = new Section();
+		section1.setIdSection(1);
+		section1.setNombreQuestion(20);
+		section1.setNomSection("Test");
 
-		Theme theme = new  Theme();
-		theme.setCodeTheme("TestTheme");
-		theme.setDescriptionTheme("Test description");
-		theme.setIdTheme(id);
-		theme.setLibelleTheme("Libelle theme");
-		section.setTheme(theme);
+		Section section2 = new Section();
+		section2.setIdSection(2);
+		section2.setNombreQuestion(20);
+		section2.setNomSection("Test");
+
 		
-		qcm.setSection(section);
+		Theme theme1 = new  Theme();
+		theme1.setCodeTheme("TestTheme");
+		theme1.setDescriptionTheme("Test description");
+		theme1.setIdTheme(id);
+		theme1.setLibelleTheme("Libelle theme");
+		section1.setTheme(theme1);
+		
+
+		Theme theme2 = new  Theme();
+		theme2.setCodeTheme("TestTheme");
+		theme2.setDescriptionTheme("Test description");
+		theme2.setIdTheme(id);
+		theme2.setLibelleTheme("Libelle theme");
+		section2.setTheme(theme2);
+		
+		lesSections.add(section1);
+		lesSections.add(section2);
+		
+		qcm.setSection(lesSections);
 		
 		return qcm;
 	}
