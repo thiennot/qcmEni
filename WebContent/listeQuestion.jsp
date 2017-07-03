@@ -20,24 +20,22 @@
 		<div class="row">
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
-				<h1 class="formListQcm">Choisir un QCM</h1>
-				<form action="AfficherQuestionsServlet">
-				<c:forEach var="qcm" items="${listeQCM}">
-					<div class="row formListQcm radio">
-	 					<label><input type="radio" value="${qcm.id}" name="radioQCM">${qcm.libelle} (
-	 					<c:forEach var="theme" items="${qcm.themes}">
-	 						${theme.libelle}
-	 					</c:forEach>
-	 					)</label>		
-					</div>
-				</c:forEach>	
-				<div class="row formListQcm">
-					<button type="submit" class="btn btn-default">Débuter le test</button>
-				</div>
-				</form>
+				<h1 class="formListQcm">Répondre aux questions</h1>
+				<div class="row">
+					<form>		
+						<fieldset class="listeQuestion-border">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<p>Texte question</p>
+							<div class="checkbox row">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>							
+						</fieldset>				
+					</form>
+				</div>				
 			</div>
 			<div class="col-sm-4"></div>
 		</div>
 	</div>
+
 </body>
 </html>
