@@ -20,7 +20,7 @@ public class QCMDao implements IQCM {
 	 * Retourne l'instnace
 	 * @return une instance de {@link IQCM}
 	 */
-	public IQCM getInstance() {
+	public static IQCM getInstance() {
 		if(instance == null) {
 			instance = new QCMMocks();
 		}
