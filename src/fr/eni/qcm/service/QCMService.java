@@ -16,7 +16,7 @@ public class QCMService {
 			QCMDTO dto = new QCMDTO();
 			dto.setId(unQcm.getIdQcm());
 			dto.setLibelle(unQcm.getNomQcm());
-			//dto.setType(unQcm.getSection().getTheme().getLibelleTheme());
+			dto.setType(unQcm.getSection().getTheme().getLibelleTheme());
 			res.add(dto);
 		}
 		
