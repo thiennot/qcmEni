@@ -1,5 +1,6 @@
 package fr.eni.qcm.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni.qcm.dao.IQCM;
@@ -11,7 +12,8 @@ public class QCMService {
 	public List<QCMDTO> listerQCM(){
 		IQCM dao = QCMDao.getInstance(); 
 		List<QCM> Qcm = dao.getQcm();
-		List<QCMDTO> res = null;
+		List<QCMDTO> res = new ArrayList<QCMDTO>();
+		System.out.println(Qcm.size());
 		for (QCM unQcm : Qcm) {
 			QCMDTO dto = new QCMDTO();
 			dto.setId(unQcm.getIdQcm());
