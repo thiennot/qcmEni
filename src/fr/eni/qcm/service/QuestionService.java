@@ -30,6 +30,6 @@ public class QuestionService {
 		q.addReponse(r);
 
 		qcmRes.addQuestion(q);
-		return null;
+		return qcmRes;
 	}
 }
