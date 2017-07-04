@@ -13,9 +13,10 @@ public class QuestionService {
 	public PageQuestionDTO getQuestions(int idQCM){
 		ITest dao = TestDao.getInstance();
 		PageQuestionDTO qcmRes = new PageQuestionDTO();
+
 		Test qcm = dao.getTest(idQCM);
 		qcmRes.setChrono(qcm.getDuree());
-		
+
 		//questions bidons
 		
 		QuestionDTO q =new QuestionDTO();

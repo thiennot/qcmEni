@@ -17,7 +17,13 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-3">${qcm.chrono}</div>
+			<div class="col-sm-3 lienQuestion">
+				<ul class="list-group">
+				  <a href=""><li class="list-group-item">Question 1<span class="badge">Non répondu</span></li></a>
+				  <a href=""><li class="list-group-item">Question 2<span class="badge">Favori</span></li></a>
+				  <a href=""><li class="list-group-item">Question 3<span class="badge">Répondu</span></li></a>
+				</ul>			
+			</div>
 			<div class="col-sm-6">
 				<h1 class="formListQcm">Répondre aux questions</h1>
 				<div class="row">
@@ -44,12 +50,12 @@
 					</form>
 				</div>				
 			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-3 tempsRestant">
 				<div class="row">
 					<div class="col-sm-12">
 						<span class="chrono">
 							<script language="JavaScript">
-								TargetDate = Date.now()+${qcm.chrono}*60000;
+								TargetDate = Date.now()+$${qcm.chrono}*60000;
 								BackColor = false;
 								ForeColor = false;
 								CountActive = true;
