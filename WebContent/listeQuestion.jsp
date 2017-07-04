@@ -17,18 +17,18 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-3"></div>
+			<div class="col-sm-3">${qcm.chrono}</div>
 			<div class="col-sm-6">
 				<h1 class="formListQcm">Répondre aux questions</h1>
 				<div class="row">
 					<form>		
-						<fieldset class="listeQuestion-border">
+						<fieldset class="listeQuestion-border" id="">
 							<legend class="listeQuestion-border">Question 1</legend>
 							<div class="row">
-								<div class="col-sm-10">
+								<div class="col-md-10 col-sm-9">
 									Texte question
 								</div>
-								<div class="col-sm-2">
+								<div class="col-md-2 col-sm-3">
 									<div class="checkbox">
 									  <label><input type="checkbox" value="id">Favori</label>
 									</div>
@@ -49,7 +49,7 @@
 					<div class="col-sm-12">
 						<span class="chrono">
 							<script language="JavaScript">
-								TargetDate = Date.now()+2*60000;
+								TargetDate = Date.now()+${qcm.chrono}*60000;
 								BackColor = false;
 								ForeColor = false;
 								CountActive = true;
