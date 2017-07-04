@@ -3,8 +3,8 @@ package fr.eni.qcm.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.eni.qcm.dao.IQCM;
-import fr.eni.qcm.dao.QCMDao;
+import fr.eni.qcm.dao.qcm.IQCM;
+import fr.eni.qcm.dao.qcm.QCMDao;
 import fr.eni.qcm.dto.QCMDTO;
 import fr.eni.qcm.dto.ThemeDTO;
 import fr.eni.qcm.entity.QCM;

@@ -1,5 +1,6 @@
 package fr.eni.qcm.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,6 +30,10 @@ public class Question {
 	 */
 	private Theme theme;
 
+	public Question() {
+		this.reponse = new ArrayList<Reponse>();
+	}
+	
 	public int getIdQuestion() {
 		return idQuestion;
 	}
