@@ -20,12 +20,6 @@ legend.listeQuestion-border {
     font-size: 14px;
 }
 
-.lienQuestion{
-	position: fixed;
-	margin-top: 7%;
-}
-
-.tempsRestant{
-	position: fixed;
-	margin-top: 7%;
+.chrono{
+	margin-left: 100%;
 }
