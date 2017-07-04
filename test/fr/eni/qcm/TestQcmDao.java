@@ -2,8 +2,8 @@ package fr.eni.qcm;
 
 import org.junit.Test;
 
-import fr.eni.qcm.dao.IQCM;
-import fr.eni.qcm.dao.QCMDao;
+import fr.eni.qcm.dao.qcm.IQCM;
+import fr.eni.qcm.dao.qcm.QCMDao;
 
 public class TestQcmDao {
 

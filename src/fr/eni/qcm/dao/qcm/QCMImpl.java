@@ -1,10 +1,10 @@
-package fr.eni.qcm.dao;
+package fr.eni.qcm.dao.qcm;
 
 import java.util.List;
 
 import fr.eni.qcm.entity.QCM;
 
-public class QCMImpl implements IQCM{
+class QCMImpl implements IQCM{
 
 	@Override
 	public List<QCM> getQcm() {
