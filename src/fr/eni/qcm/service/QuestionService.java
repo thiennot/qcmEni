@@ -35,7 +35,7 @@ public class QuestionService {
 			for (int i = 0; i < uneSection.getNbQuestion(); i++) {
 
 				Random rand = new Random();
-				int n = rand.nextInt(lesQuestions.size()-0);
+				int n = (int) (Math.random()*(lesQuestions.size()));
 				System.out.println("nombre aleatoire : ");
 				System.out.println(n);
 				QuestionDTO qDTO = new QuestionDTO();

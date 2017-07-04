@@ -7,10 +7,11 @@ import java.util.List;
 public class QuestionDTO {
 	private int idQuestion;
 	private String nomQuestion;
-	private List<ReponseDTO> reponse;
+	private List<ReponseDTO> reponses;
+	private String balise;
 	
 	public QuestionDTO(){
-		reponse = new ArrayList();
+		reponses = new ArrayList();
 	}
 
 	public int getIdQuestion() {
@@ -29,15 +30,24 @@ public class QuestionDTO {
 		this.nomQuestion = nomQuestion;
 	}
 
-	public List<ReponseDTO> getReponse() {
-		return this.reponse;
+	public List<ReponseDTO> getReponses() {
+		return reponses;
 	}
 
-	public void setReponse(List<ReponseDTO> reponse) {
-		this.reponse = reponse;
+	public void setReponses(List<ReponseDTO> reponses) {
+		this.reponses = reponses;
 	}
+
+	public String getBalise() {
+		return balise;
+	}
+
+	public void setBalise(String balise) {
+		this.balise = balise;
+	}
+	
 	public void addReponse(ReponseDTO r){
-		this.reponse.add(r);
+		this.reponses.add(r);
 	}
 	
 }
