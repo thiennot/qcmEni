@@ -1,19 +1,21 @@
 package fr.eni.qcm.service;
 
-import fr.eni.qcm.dao.qcm.IQCM;
-import fr.eni.qcm.dao.qcm.QCMDao;
+
+import fr.eni.qcm.dao.test.ITest;
+import fr.eni.qcm.dao.test.TestDao;
 import fr.eni.qcm.dto.PageQuestionDTO;
 import fr.eni.qcm.dto.QCMDTO;
 import fr.eni.qcm.dto.QuestionDTO;
 import fr.eni.qcm.dto.ReponseDTO;
-import fr.eni.qcm.entity.QCM;
+import fr.eni.qcm.entity.Test;
+
 
 public class QuestionService {
 	public PageQuestionDTO getQuestions(int idQCM){
-		IQCM dao = QCMDao.getInstance();
+		ITest dao = TestDao.getInstance();
 		PageQuestionDTO qcmRes = new PageQuestionDTO();
-		QCM qcm = dao.getQCM(idQCM);
-		qcmRes.setChrono((int)qcm.getTempsQCM());
+		Test qcm = dao.getQCM(idQCM);
+		qcmRes.setChrono((int)qcm.getDuree());
 		
 		//questions bidons
 		

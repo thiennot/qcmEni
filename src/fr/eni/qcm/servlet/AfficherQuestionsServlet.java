@@ -47,7 +47,6 @@ public class AfficherQuestionsServlet extends HttpServlet {
 		
 		QuestionService service = new QuestionService();
 		PageQuestionDTO listQuestions = service.getQuestions(idQCM);
-		System.out.println(listQuestions.getChrono());
 		request.setAttribute("qcm",listQuestions);
 		RequestDispatcher rd = request.getRequestDispatcher("listeQuestion.jsp");
 		rd.forward(request, response);
