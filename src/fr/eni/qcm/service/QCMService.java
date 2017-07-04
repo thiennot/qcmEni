@@ -14,7 +14,7 @@ import fr.eni.qcm.entity.Theme;
 public class QCMService {
 	public List<QCMDTO> listerQCM(){
 		ITest dao = TestDao.getInstance(); 
-		List<Test> Qcm = dao.getQcm();
+		List<Test> Qcm = dao.getTest();
 		List<QCMDTO> res = new ArrayList<QCMDTO>();
 
 		for (Test unQcm : Qcm) {
