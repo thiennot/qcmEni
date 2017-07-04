@@ -19,11 +19,11 @@ public class QCMService {
 
 		for (Test unQcm : Qcm) {
 			QCMDTO dto = new QCMDTO();
-			dto.setId(unQcm.getIdQcm());
-			dto.setLibelle(unQcm.getNomQcm());
-			for (Section sec : unQcm.getSection()) {
+			dto.setId(unQcm.getIdTest());
+			dto.setLibelle(unQcm.getLibelle());
+			for (Section sec : unQcm.getSections()) {
 				ThemeDTO thdto = new ThemeDTO();
-				thdto.setLibelle(sec.getTheme().getLibelleTheme());
+				thdto.setLibelle(sec.getTheme().getLibelle());
 				dto.addTheme(thdto);
 			}		
 			res.add(dto);

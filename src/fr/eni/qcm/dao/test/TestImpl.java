@@ -7,12 +7,12 @@ import fr.eni.qcm.entity.Test;
 class TestImpl implements ITest{
 
 	@Override
-	public List<Test> getQcm() {
+	public List<Test> getTest() {
 		return null;
 	}
 
 	@Override
-	public Test getQCM(int id) {
+	public Test getTest(int id) {
 		return null;
 	}
 

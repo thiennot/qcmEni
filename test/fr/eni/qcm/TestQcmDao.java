@@ -11,7 +11,7 @@ public class TestQcmDao {
 	
 	@Test
 	public void test() {
-		assert(dao.getQcm().size() > 0);
+		assert(dao.getTest().size() > 0);
 	}
 
 }

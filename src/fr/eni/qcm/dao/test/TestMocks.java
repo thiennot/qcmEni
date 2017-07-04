@@ -11,18 +11,18 @@ import fr.eni.qcm.entity.Theme;
 class TestMocks implements ITest {
 
 	@Override
-	public List<Test> getQcm() {
+	public List<Test> getTest() {
 		List<Test> list = new ArrayList<Test>();
 		
 		for(int i = 0; i <= 5; i++) {
-			list.add(getQCM(i));
+			list.add(getTest(i));
 		}
 		
 		return list;
 	}
 
 	@Override
-	public Test getQCM(int id) {
+	public Test getTest(int id) {
 		Test qcm = new Test();
 		qcm.setIdTest(id);
 		qcm.setDuree(10);

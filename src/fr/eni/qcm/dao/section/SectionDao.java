@@ -1,5 +1,7 @@
 package fr.eni.qcm.dao.section;
 
+import fr.eni.qcm.entity.Section;
+
 public class SectionDao implements ISection {
 
 	private static ISection instance;
@@ -17,8 +19,7 @@ public class SectionDao implements ISection {
 	}
 
 	@Override
-	public int getNombreQuestion(int idSection) {
-		return instance.getNombreQuestion(idSection);
+	public Section getSection(int idSection) {
+		return instance.getSection(idSection);
 	}
-	
 }

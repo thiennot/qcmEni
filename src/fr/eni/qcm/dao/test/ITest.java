@@ -15,12 +15,12 @@ public interface ITest {
 	 * Retourne tous les QCM 
 	 * @return une liste de {@link Test}
 	 */
-	List<Test> getQcm();
+	List<Test> getTest();
 
 	/**
 	 * Retourne un {@link Test} grâce a son id
 	 * @param id l'identifiant du {@link Test}
 	 * @return un {@link Test}
 	 */
-	Test getQCM(int id);
+	Test getTest(int id);
 }

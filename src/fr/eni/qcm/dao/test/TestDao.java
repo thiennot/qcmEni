@@ -34,13 +34,13 @@ public class TestDao implements ITest {
 	}
 	
 	@Override
-	public List<Test> getQcm() {
-		return instance.getQcm();
+	public List<Test> getTest() {
+		return instance.getTest();
 	}
 
 	@Override
-	public Test getQCM(int id) {
-		return instance.getQCM(id);
+	public Test getTest(int id) {
+		return instance.getTest(id);
 	}
 	
 }

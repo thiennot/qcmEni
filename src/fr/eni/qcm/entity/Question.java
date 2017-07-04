@@ -1,5 +1,6 @@
 package fr.eni.qcm.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -39,6 +40,10 @@ public class Question {
 	 */
 	private List<Proposition> propositions;
 
+	public Question() {
+		this.propositions = new ArrayList<Proposition>();
+	}
+	
 	/**
 	 * @return the idQuestion
 	 */

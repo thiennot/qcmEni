@@ -1,5 +1,7 @@
 package fr.eni.qcm.dao.section;
 
+import fr.eni.qcm.entity.Section;
+
 /**
  * Interface de la section
  * @author mvinet
@@ -8,10 +10,9 @@ package fr.eni.qcm.dao.section;
 public interface ISection {
 
 	/**
-	 * Retourne le nombre de question disponible dans une section
-	 * @param idSection id de la section
-	 * @return un nombre de question
+	 * Retourne la section grâce a son identifiant
+	 * @param idSection l'identifiant de la section
+	 * @return l'objet section
 	 */
-	int getNombreQuestion(int idSection);
-	
+	Section getSection(int idSection);
 }
