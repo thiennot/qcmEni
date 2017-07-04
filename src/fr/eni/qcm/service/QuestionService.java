@@ -1,7 +1,7 @@
 package fr.eni.qcm.service;
 
-import fr.eni.qcm.dao.IQCM;
-import fr.eni.qcm.dao.QCMDao;
+import fr.eni.qcm.dao.qcm.IQCM;
+import fr.eni.qcm.dao.qcm.QCMDao;
 import fr.eni.qcm.dto.PageQuestionDTO;
 import fr.eni.qcm.dto.QCMDTO;
 import fr.eni.qcm.dto.QuestionDTO;
