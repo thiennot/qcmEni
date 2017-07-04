@@ -3,7 +3,6 @@ package fr.eni.qcm.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.eni.qcm.entity.Reponse;
 
 public class QuestionDTO {
 	private int idQuestion;
