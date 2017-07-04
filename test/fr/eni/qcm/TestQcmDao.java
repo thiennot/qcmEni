@@ -2,12 +2,12 @@ package fr.eni.qcm;
 
 import org.junit.Test;
 
-import fr.eni.qcm.dao.qcm.IQCM;
-import fr.eni.qcm.dao.qcm.QCMDao;
+import fr.eni.qcm.dao.test.ITest;
+import fr.eni.qcm.dao.test.TestDao;
 
 public class TestQcmDao {
 
-	IQCM dao = QCMDao.getInstance();
+	ITest dao = TestDao.getInstance();
 	
 	@Test
 	public void test() {

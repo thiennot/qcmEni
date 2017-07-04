@@ -3,8 +3,8 @@ package fr.eni.qcm.dao.question;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.eni.qcm.entity.Proposition;
 import fr.eni.qcm.entity.Question;
-import fr.eni.qcm.entity.Reponse;
 
 public class MockQuestion implements IQuestion {
 
@@ -25,20 +25,21 @@ public class MockQuestion implements IQuestion {
 		Question question = new Question();
 		
 		question.setIdQuestion(idQuestion);
-		question.setNomQuestion("De quelle couleur est le cheval blanc d'henri IV");
-		question.setTheme(null);
+		question.setEnonce("De quelle couleur est le cheval blanc d'henri IV");
 		
-		Reponse reponse = new Reponse();
+		Proposition reponse = new Proposition();
 		reponse.setCorrect(true);
-		reponse.setIdReponse(1);
-		reponse.setNomReponse("Blanc");
-		question.getReponse().add(reponse);
+		reponse.setIdProposition(1);
+		reponse.setEnnonce("Blanc");
+		reponse.setQuestion(question);
+		question.getPropositions().add(reponse);
 		
-		Reponse reponse1 = new Reponse();
+		Proposition reponse1 = new Proposition();
 		reponse1.setCorrect(false);
-		reponse1.setIdReponse(2);
-		reponse1.setNomReponse("Noir");
-		question.getReponse().add(reponse1);
+		reponse1.setIdProposition(2);
+		reponse1.setEnnonce("Noir");
+		reponse1.setQuestion(question);
+		question.getPropositions().add(reponse1);
 		
 		return question;
 	}

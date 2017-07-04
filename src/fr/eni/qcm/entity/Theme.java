@@ -1,5 +1,6 @@
 package fr.eni.qcm.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,29 +11,29 @@ import java.util.List;
 public class Theme {
 
 	/**
-	 * id du theme
+	 * identifiant du theme
 	 */
 	private int idTheme;
 	
 	/**
-	 * le code du theme
+	 * liste de section
 	 */
-	private String codeTheme;
+	private List<Section> sections;
 	
 	/**
 	 * le libelle du theme
 	 */
-	private String libelleTheme;
+	private String libelle;
 	
 	/**
-	 * la description du theme
-	 */
-	private String descriptionTheme;
-
-	/**
-	 * les questions du theme
+	 * liste de question du theme
 	 */
 	private List<Question> questions;
+
+	public Theme() {
+		this.sections = new ArrayList<Section>();
+		this.questions = new ArrayList<Question>();
+	}
 	
 	/**
 	 * @return the idTheme
@@ -49,45 +50,31 @@ public class Theme {
 	}
 
 	/**
-	 * @return the codeTheme
+	 * @return the sections
 	 */
-	public String getCodeTheme() {
-		return codeTheme;
+	public List<Section> getSections() {
+		return sections;
 	}
 
 	/**
-	 * @param codeTheme the codeTheme to set
+	 * @param sections the sections to set
 	 */
-	public void setCodeTheme(String codeTheme) {
-		this.codeTheme = codeTheme;
+	public void setSections(List<Section> sections) {
+		this.sections = sections;
 	}
 
 	/**
-	 * @return the libelleTheme
+	 * @return the libelle
 	 */
-	public String getLibelleTheme() {
-		return libelleTheme;
+	public String getLibelle() {
+		return libelle;
 	}
 
 	/**
-	 * @param libelleTheme the libelleTheme to set
+	 * @param libelle the libelle to set
 	 */
-	public void setLibelleTheme(String libelleTheme) {
-		this.libelleTheme = libelleTheme;
-	}
-
-	/**
-	 * @return the descriptionTheme
-	 */
-	public String getDescriptionTheme() {
-		return descriptionTheme;
-	}
-
-	/**
-	 * @param descriptionTheme the descriptionTheme to set
-	 */
-	public void setDescriptionTheme(String descriptionTheme) {
-		this.descriptionTheme = descriptionTheme;
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
 	}
 
 	/**
@@ -103,6 +90,5 @@ public class Theme {
 	public void setQuestions(List<Question> questions) {
 		this.questions = questions;
 	}
-	
-	
+
 }

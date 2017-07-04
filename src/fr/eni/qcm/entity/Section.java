@@ -8,65 +8,46 @@ package fr.eni.qcm.entity;
 public class Section {
 
 	/**
-	 * id de la section
+	 * le test de la section
 	 */
-	private int idSection;
+	private Test test;
 	
 	/**
-	 * nom de la section
+	 * nombre de question a récupéré pour le test
 	 */
-	private String nomSection;
+	private int nbQuestion;
 	
 	/**
-	 * nombre de question
-	 */
-	private int nombreQuestion;
-	
-	/**
-	 * le theme
+	 * le theme de la section
 	 */
 	private Theme theme;
 
 	/**
-	 * @return the idSection
+	 * @return the test
 	 */
-	public int getIdSection() {
-		return idSection;
+	public Test getTest() {
+		return test;
 	}
 
 	/**
-	 * @param idSection the idSection to set
+	 * @param test the test to set
 	 */
-	public void setIdSection(int idSection) {
-		this.idSection = idSection;
+	public void setTest(Test test) {
+		this.test = test;
 	}
 
 	/**
-	 * @return the nomSection
+	 * @return the nbQuestion
 	 */
-	public String getNomSection() {
-		return nomSection;
+	public int getNbQuestion() {
+		return nbQuestion;
 	}
 
 	/**
-	 * @param nomSection the nomSection to set
+	 * @param nbQuestion the nbQuestion to set
 	 */
-	public void setNomSection(String nomSection) {
-		this.nomSection = nomSection;
-	}
-
-	/**
-	 * @return the nombreQuestion
-	 */
-	public int getNombreQuestion() {
-		return nombreQuestion;
-	}
-
-	/**
-	 * @param nombreQuestion the nombreQuestion to set
-	 */
-	public void setNombreQuestion(int nombreQuestion) {
-		this.nombreQuestion = nombreQuestion;
+	public void setNbQuestion(int nbQuestion) {
+		this.nbQuestion = nbQuestion;
 	}
 
 	/**
@@ -82,6 +63,7 @@ public class Section {
 	public void setTheme(Theme theme) {
 		this.theme = theme;
 	}
+	
 	
 	
 }

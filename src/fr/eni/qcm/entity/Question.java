@@ -1,6 +1,5 @@
 package fr.eni.qcm.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,67 +10,117 @@ import java.util.List;
 public class Question {
 
 	/**
-	 * id question
+	 * id du question
 	 */
 	private int idQuestion;
 	
 	/**
-	 * nom question
+	 * énoncé de la question
 	 */
-	private String nomQuestion;
+	private String enonce;
 	
 	/**
-	 * Liste des réponses disponible
+	 * url du média
 	 */
-	private List<Reponse> reponse;
+	private String media;
 	
 	/**
-	 * le theme
+	 * le poids de la question
 	 */
-	private Theme theme;
+	private int poids;
+	
+	/**
+	 * le type de question, simple ou multiple
+	 */
+	private String type;
+	
+	/**
+	 * liste de proposition
+	 */
+	private List<Proposition> propositions;
 
-	public Question() {
-		this.reponse = new ArrayList<Reponse>();
-	}
-	
+	/**
+	 * @return the idQuestion
+	 */
 	public int getIdQuestion() {
 		return idQuestion;
 	}
 
+	/**
+	 * @param idQuestion the idQuestion to set
+	 */
 	public void setIdQuestion(int idQuestion) {
 		this.idQuestion = idQuestion;
 	}
 
-	public String getNomQuestion() {
-		return nomQuestion;
-	}
-
-	public void setNomQuestion(String nomQuestion) {
-		this.nomQuestion = nomQuestion;
-	}
-
-	public Theme getTheme() {
-		return theme;
-	}
-
-	public void setTheme(Theme theme) {
-		this.theme = theme;
+	/**
+	 * @return the enonce
+	 */
+	public String getEnonce() {
+		return enonce;
 	}
 
 	/**
-	 * @return the reponse
+	 * @param enonce the enonce to set
 	 */
-	public List<Reponse> getReponse() {
-		return reponse;
+	public void setEnonce(String enonce) {
+		this.enonce = enonce;
 	}
 
 	/**
-	 * @param reponse the reponse to set
+	 * @return the media
 	 */
-	public void setReponse(List<Reponse> reponse) {
-		this.reponse = reponse;
+	public String getMedia() {
+		return media;
 	}
-	
-	
+
+	/**
+	 * @param media the media to set
+	 */
+	public void setMedia(String media) {
+		this.media = media;
+	}
+
+	/**
+	 * @return the poids
+	 */
+	public int getPoids() {
+		return poids;
+	}
+
+	/**
+	 * @param poids the poids to set
+	 */
+	public void setPoids(int poids) {
+		this.poids = poids;
+	}
+
+	/**
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	/**
+	 * @return the propositions
+	 */
+	public List<Proposition> getPropositions() {
+		return propositions;
+	}
+
+	/**
+	 * @param propositions the propositions to set
+	 */
+	public void setPropositions(List<Proposition> propositions) {
+		this.propositions = propositions;
+	}
 	
 }
