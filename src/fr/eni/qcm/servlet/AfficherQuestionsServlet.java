@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.eni.qcm.service.QCMService;
+import fr.eni.qcm.service.QuestionService;
+import fr.eni.qcm.dto.PageQuestionDTO;
 import fr.eni.qcm.dto.QCMDTO;
 
 
@@ -43,8 +45,10 @@ public class AfficherQuestionsServlet extends HttpServlet {
 		
 		int idQCM = Integer.parseInt(request.getParameter("radioQCM"));
 		
-		//QuestionService service = new QuestionService();
+		QuestionService service = new QuestionService();
+		PageQuestionDTO listQuestions = service.getQuestions(idQCM);
 		
+		request.setAttribute("qcm",listQuestions);
 		RequestDispatcher rd = request.getRequestDispatcher("listeQuestions.jsp");
 		rd.forward(request, response);
 	}
