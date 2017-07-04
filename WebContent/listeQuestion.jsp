@@ -8,32 +8,61 @@
 <head>
 	<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type" />
 	<title>QCM ENI</title>
-	<link media="all" rel="stylesheet" href="./theme/style.css"
-		type="text/css" />
-	<!-- Latest compiled and minified CSS -->
+	<link media="all" rel="stylesheet" href="./theme/style.css" type="text/css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script href="./theme/script.js"></script>
 </head>
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4">
+			<div class="col-sm-3">${qcm.chrono}</div>
+			<div class="col-sm-6">
 				<h1 class="formListQcm">Répondre aux questions</h1>
 				<div class="row">
 					<form>		
-						<fieldset class="listeQuestion-border">
+						<fieldset class="listeQuestion-border" id="">
 							<legend class="listeQuestion-border">Question 1</legend>
-							<p>Texte question</p>
-							<div class="checkbox row">
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
 							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
-							</div>							
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
 						</fieldset>				
 					</form>
 				</div>				
 			</div>
-			<div class="col-sm-4"></div>
+			<div class="col-sm-3">
+				<div class="row">
+					<div class="col-sm-12">
+						<span class="chrono">
+							<script language="JavaScript">
+								TargetDate = Date.now()+${qcm.chrono}*60000;
+								BackColor = false;
+								ForeColor = false;
+								CountActive = true;
+								CountStepper = -1;
+								LeadingZero = true;
+								DisplayFormat = "%%M%%:%%S%%";
+								FinishMessage = "C'est fini !";
+							</script>
+							<script language="JavaScript" src="http://scripts.hashemian.com/js/countdown.js"></script>
+						</span>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
