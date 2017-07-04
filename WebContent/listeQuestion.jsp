@@ -16,13 +16,19 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-3">${qcm.chrono}</div>
+		<div class="row tout">
+			<div class="col-sm-3">
+				<ul class="list-group fixe">
+				  <a href=""><li class="list-group-item">Question 1<span class="badge">12</span></li></a>
+				  <a href=""><li class="list-group-item">Question 2<span class="badge">5</span></li></a>
+				  <a href=""><li class="list-group-item">Question 2<span class="badge">3</span></li></a> 
+				</ul>
+			</div>
 			<div class="col-sm-6">
 				<h1 class="formListQcm">Répondre aux questions</h1>
 				<div class="row">
 					<form>		
-						<fieldset class="listeQuestion-border" id="">
+						<fieldset class="listeQuestion-border" id="id">
 							<legend class="listeQuestion-border">Question 1</legend>
 							<div class="row">
 								<div class="col-md-10 col-sm-9">
@@ -40,14 +46,386 @@
 							<div class="checkbox">
 							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
 							</div>						
-						</fieldset>				
+						</fieldset>	
+						
+						
+						
+						
+						
+						<fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset><fieldset class="listeQuestion-border" id="id">
+							<legend class="listeQuestion-border">Question 1</legend>
+							<div class="row">
+								<div class="col-md-10 col-sm-9">
+									Texte question
+								</div>
+								<div class="col-md-2 col-sm-3">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="id">Favori</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>	
+							<div class="checkbox">
+							  <label><input type="checkbox" value="" name="question1"/>Texte Réponse</label>
+							</div>						
+						</fieldset>
+						
+						
+						
+						
+						
+						<button type="submit" class="btn btn-success btn-block">Valider</button>			
 					</form>
 				</div>				
 			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-3 blocFixe chrono">
 				<div class="row">
 					<div class="col-sm-12">
-						<span class="chrono">
+						<span class="fixe">
 							<script language="JavaScript">
 								TargetDate = Date.now()+${qcm.chrono}*60000;
 								BackColor = false;
