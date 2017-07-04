@@ -26,5 +26,4 @@ public interface IQuestion {
 	Question findOne(int idQuestion);
 	
 	
-	
 }

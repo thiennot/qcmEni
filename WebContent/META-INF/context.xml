@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<Resource name="jdbc/qcmEni" auth="Container" type="javax.sql.DataSource"
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" removeAbandonedTimeout="5"
+		url="jdbc:sqlserver://10.139.200.20;databasename=Projet;user=sa;password=Pa$$w0rd" />
+</Context>
