@@ -28,23 +28,24 @@
 	<div class="container">
 		<div class="row tout">
 			<div class="col-sm-3">
-				<ul class="list-group fixe">
-					<a href=""><li class="list-group-item">Question 1<span
-							class="badge">12</span></li></a>
-					<a href=""><li class="list-group-item">Question 2<span
-							class="badge">5</span></li></a>
-					<a href=""><li class="list-group-item">Question 2<span
-							class="badge">3</span></li></a>
+				<ul class="list-group fixe">					
+					<%int i = 1; %>
+					<c:forEach var="question" items="${qcm.lesQuestions}">
+						<a href="#question<%= i %>"><li class="list-group-item">Question <%= i %><span class="badge">je sais pas</span></li></a>		
+							<%i++; %>
+					</c:forEach>
+					
 				</ul>
 			</div>
 			<div class="col-sm-6">
 				<h1 class="formListQcm">Répondre aux questions</h1>
 				<div class="row">
 					<form>
+						<%int j = 1; %>
 						<c:forEach var="question" items="${qcm.lesQuestions}">
 							<fieldset class="listeQuestion-border"
-								id="${question.idQuestion }">
-								<legend class="listeQuestion-border">Question </legend>
+								id="question<%= i %>">
+								<legend class="listeQuestion-border">Question <%= j %></legend>
 								<div class="row">
 									<div class="col-md-10 col-sm-9">${question.nomQuestion }
 									</div>
@@ -55,13 +56,14 @@
 										</div>
 									</div>
 								</div>
-								<c:forEach var="reponse" items="${question.reponses}">
-									<div class="checkbox">
-										<label><input type="checkbox" value=""
-											name="question1" />Texte Réponse</label>
+								<c:forEach var="reponse" items="${question.propositions}">
+									<div class="${question.balise }">
+										<label><input type="${question.balise }" value=""
+											name="question${question.idQuestion }" />${reponse.libelle }</label>
 									</div>
 								</c:forEach>
-							</fieldset>
+							</fieldset>			
+							<%j++; %>
 						</c:forEach>
 						<button type="submit" class="btn btn-success btn-block">Valider</button>
 					</form>
