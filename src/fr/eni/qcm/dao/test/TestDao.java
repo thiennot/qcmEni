@@ -22,7 +22,7 @@ public class TestDao implements ITest {
 	 */
 	public static ITest getInstance() {
 		if(instance == null) {
-			instance = new TestMocks();
+			instance = new TestImpl();
 		}
 		return instance;
 	}

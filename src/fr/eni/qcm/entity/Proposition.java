@@ -76,6 +76,15 @@ public class Proposition {
 	public void setEnnonce(String ennonce) {
 		this.ennonce = ennonce;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Proposition [idProposition=" + idProposition + ",ennonce=" + ennonce + ", correct=" + correct
+				+ "]";
+	}
 	
 	
 	

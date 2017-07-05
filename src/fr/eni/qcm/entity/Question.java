@@ -127,5 +127,15 @@ public class Question {
 	public void setPropositions(List<Proposition> propositions) {
 		this.propositions = propositions;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Question [idQuestion=" + idQuestion + ", enonce=" + enonce
+				+ ", media=" + media + ", poids=" + poids + ", type=" + type
+				+ ", propositions=" + propositions + "]";
+	}
 	
 }
