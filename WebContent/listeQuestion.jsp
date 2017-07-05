@@ -40,7 +40,7 @@
 			<div class="col-sm-6">
 				<h1 class="formListQcm">Répondre aux questions</h1>
 				<div class="row">
-					<form>
+					<form action="CalculResultatServlet">
 						<%int j = 1; %>
 						<c:forEach var="question" items="${qcm.lesQuestions}">
 							<fieldset class="listeQuestion-border"
@@ -82,7 +82,7 @@
 								DisplayFormat = "%%M%%:%%S%%";
 								FinishMessage = "C'est fini !";
 							</script> <script language="JavaScript"
-								src="http://scripts.hashemian.com/js/countdown.js"></script>
+								src="./theme/countdown.js"></script>
 						</span>
 					</div>
 				</div>
