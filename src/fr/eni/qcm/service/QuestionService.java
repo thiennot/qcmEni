@@ -9,8 +9,9 @@ import fr.eni.qcm.dao.question.QuestionDao;
 import fr.eni.qcm.dao.test.ITest;
 import fr.eni.qcm.dao.test.TestDao;
 import fr.eni.qcm.dto.PageQuestionDTO;
+import fr.eni.qcm.dto.PropositionDTO;
 import fr.eni.qcm.dto.QuestionDTO;
-import fr.eni.qcm.dto.ReponseDTO;
+import fr.eni.qcm.entity.Proposition;
 import fr.eni.qcm.entity.Question;
 import fr.eni.qcm.entity.Section;
 import fr.eni.qcm.entity.Test;
@@ -19,46 +20,33 @@ import fr.eni.qcm.entity.Test;
 public class QuestionService {
 	public PageQuestionDTO getQuestions(int idQCM){
 		//DAO
-		ITest dao = TestDao.getInstance();
-		IQuestion qaoQuestion = QuestionDao.getInstance();
+		IQuestion questionDAO = QuestionDao.getInstance();
+		ITest testDAO = TestDao.getInstance();
+		
 		//L'objet à renvoyer
 		PageQuestionDTO qcmRes = new PageQuestionDTO();
 
-		Test qcm = dao.getTest(idQCM);
+		List<Question> questions = questionDAO.getQuestion(idQCM);
+		
+		
+		qcmRes.setChrono(testDAO.getTest(idQCM).getDuree());
 
-		qcmRes.setChrono(qcm.getDuree());
-
-		//les questions
-		for (Section uneSection : qcm.getSections()) {
-			List<Question> lesQuestions = uneSection.getTheme().getQuestions();
-
-			for (int i = 0; i < uneSection.getNbQuestion(); i++) {
-
-				Random rand = new Random();
-				int n = (int) (Math.random()*(lesQuestions.size()));
-				System.out.println("nombre aleatoire : ");
-				System.out.println(n);
-				QuestionDTO qDTO = new QuestionDTO();
-				qDTO.setIdQuestion(uneSection.getTheme().getQuestions().get(n).getIdQuestion());
-				qDTO.setNomQuestion(uneSection.getTheme().getQuestions().get(n).getEnonce());
-				qcmRes.addQuestion(qDTO);
+		for (Question uneQuestion : questions) {
+			QuestionDTO questDTO =new QuestionDTO();
+			PropositionDTO propDTO;
+		    questDTO.setIdQuestion(uneQuestion.getIdQuestion());
+			questDTO.setNomQuestion(uneQuestion.getEnonce());
+			questDTO.setBalise(uneQuestion.getType());
+			for (Proposition prop : uneQuestion.getPropositions()) {
+				propDTO = new PropositionDTO();
+				propDTO.setId(prop.getIdProposition());
+				propDTO.setLibelle(prop.getEnnonce());
+				questDTO.addProposition(propDTO);
 			}
+		
+			qcmRes.addQuestion(questDTO);
 		}
-
-
-		QuestionDTO q =new QuestionDTO();
-		q.setIdQuestion(5);
-		q.setNomQuestion("question ?");
-		ReponseDTO r = new ReponseDTO();
-		r.setId(1);
-		r.setLibelle("oui");
-
-		q.addReponse(r);
-		r.setId(2);
-		r.setLibelle("non");
-		q.addReponse(r);
-
-		qcmRes.addQuestion(q);
+		
 		return qcmRes;
 	}
 }
