@@ -1,4 +1,4 @@
-function repondQuestion(id){
+function repondQuestion(id, idQuestion){
 	if(document.getElementById("idFav"+id).checked)
 		texte = "Favori";	
 	else

@@ -58,7 +58,7 @@ crossorigin="anonymous"></script>
 								</div>
 								<c:forEach var="reponse" items="${question.propositions}">
 									<div class="${question.balise }">
-										<label><input type="${question.balise }" id="idQuestion<%= j %>" onClick="repondQuestion(<%= j %>);" value=""
+										<label><input type="${question.balise }" id="idQuestion<%= j %>" onClick="repondQuestion(<%= j %>, ${question.idQuestion });" value=""
 											name="question${question.idQuestion }[]" />${reponse.libelle }</label>
 									</div>
 								</c:forEach>
