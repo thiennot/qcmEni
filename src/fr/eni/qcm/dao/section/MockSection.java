@@ -5,7 +5,7 @@ import fr.eni.qcm.entity.Question;
 import fr.eni.qcm.entity.Section;
 import fr.eni.qcm.entity.Theme;
 
-public class MockSection implements ISection {
+class MockSection implements ISection {
 
 	@Override
 	public Section getSection(int idSection) {

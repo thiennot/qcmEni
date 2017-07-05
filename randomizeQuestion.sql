@@ -19,7 +19,8 @@ returns @result table (
 	 idQuestion int not null, 
 	 enonce varchar(100) not null, 
 	 media varchar(100) null, 
-	 poids int not null
+	 poids int not null,
+	 [type] varchar(100) not null
 )
 as 
 begin
@@ -34,6 +35,7 @@ begin
 	declare @enonce as varchar(100);
 	declare @media as varchar(100);
 	declare @poids as int;
+	declare @type as varchar(100);
 	
 	set @loop_section = cursor for
 		select nbquestionsatirer, idTheme
@@ -47,7 +49,7 @@ begin
 		begin
 
 			set @loop_question = cursor for 
-				select top(@nbQuestion) q.idQuestion, q.enonce, q.media, q.poids 
+				select top(@nbQuestion) q.idQuestion, q.enonce, q.media, q.poids, q.[type]
 				FROM theme t, section_test s, question q
 				where s.idtheme = t.idtheme
 				and t.idtheme = q.idtheme
@@ -56,12 +58,12 @@ begin
 				ORDER BY (SELECT [MyNewId] FROM Get_NewID)
 				
 			open @loop_question
-				fetch next from @loop_question into @idQuestion, @enonce, @media, @poids
+				fetch next from @loop_question into @idQuestion, @enonce, @media, @poids, @type
 				
 				while @@FETCH_STATUS = 0
 				begin
-					insert into @result values (@idQuestion, @enonce, @media, @poids);
-					fetch next from @loop_question into @idQuestion, @enonce, @media, @poids
+					insert into @result values (@idQuestion, @enonce, @media, @poids, @type)
+					fetch next from @loop_question into @idQuestion, @enonce, @media, @poids, @type
 				end
 			close @loop_question
 			fetch next from @loop_section into @nbQuestion, @idTheme

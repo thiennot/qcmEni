@@ -6,7 +6,7 @@ import java.util.List;
 import fr.eni.qcm.entity.Proposition;
 import fr.eni.qcm.entity.Question;
 
-public class MockQuestion implements IQuestion {
+class MockQuestion implements IQuestion {
 
 	@Override
 	public List<Question> getQuestion(int idQcm) {

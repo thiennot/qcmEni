@@ -10,7 +10,7 @@ public class QuestionDao implements IQuestion {
 	
 	public static IQuestion getInstance() {
 		if(instance == null) {
-			instance = new MockQuestion();
+			instance = new QuestionImpl();
 		}
 		
 		return instance;
