@@ -1,12 +1,12 @@
 package fr.eni.qcm.dto;
 
-public class ReponseDTO {
+public class PropositionDTO {
 	private int id;
 	private String libelle;
-	private boolean correcte;
+	private boolean favori;
 	
-	public ReponseDTO(){
-		
+	public PropositionDTO(){
+		this.favori = false;
 	}
 
 	public int getId() {
@@ -25,14 +25,14 @@ public class ReponseDTO {
 		this.libelle = libelle;
 	}
 
-	public boolean isCorrecte() {
-		return correcte;
+	public boolean isFavori() {
+		return favori;
 	}
 
-	public void setCorrecte(boolean correcte) {
-		this.correcte = correcte;
+	public void setFavori(boolean favori) {
+		this.favori = favori;
 	}
-	
-	
+
+
 	
 }

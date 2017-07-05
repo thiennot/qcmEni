@@ -7,11 +7,11 @@ import java.util.List;
 public class QuestionDTO {
 	private int idQuestion;
 	private String nomQuestion;
-	private List<ReponseDTO> reponses;
+	private List<PropositionDTO> propositions;
 	private String balise;
 	
 	public QuestionDTO(){
-		reponses = new ArrayList();
+		propositions = new ArrayList();
 	}
 
 	public int getIdQuestion() {
@@ -30,12 +30,17 @@ public class QuestionDTO {
 		this.nomQuestion = nomQuestion;
 	}
 
-	public List<ReponseDTO> getReponses() {
-		return reponses;
+	public List<PropositionDTO> getPropositions() {
+		return propositions;
 	}
 
-	public void setReponses(List<ReponseDTO> reponses) {
-		this.reponses = reponses;
+	public void setPropositions(List<PropositionDTO> reponses) {
+		this.propositions = reponses;
+	}
+
+	
+	public void addProposition(PropositionDTO r){
+		this.propositions.add(r);
 	}
 
 	public String getBalise() {
@@ -43,11 +48,15 @@ public class QuestionDTO {
 	}
 
 	public void setBalise(String balise) {
-		this.balise = balise;
+		if("simple".equals(balise)){
+			this.balise="radio";
+		}else{
+			this.balise = "checkbox";
+		}
+		
 	}
 	
-	public void addReponse(ReponseDTO r){
-		this.reponses.add(r);
-	}
+	
+	
 	
 }
