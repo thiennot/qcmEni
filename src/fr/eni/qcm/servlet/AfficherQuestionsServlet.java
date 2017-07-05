@@ -44,10 +44,13 @@ public class AfficherQuestionsServlet extends HttpServlet {
 		
 		
 		int idQCM = Integer.parseInt(request.getParameter("radioQCM"));
+		if(request.getSession().getAttribute("qcm")==null){
+			QuestionService service = new QuestionService();
+			PageQuestionDTO listQuestions = service.getQuestions(idQCM);
+			request.getSession().setAttribute("qcm",listQuestions);
+		}
 		
-		QuestionService service = new QuestionService();
-		PageQuestionDTO listQuestions = service.getQuestions(idQCM);
-		request.setAttribute("qcm",listQuestions);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("listeQuestion.jsp");
 		rd.forward(request, response);
 	}

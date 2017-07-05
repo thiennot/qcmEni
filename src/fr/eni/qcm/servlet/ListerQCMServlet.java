@@ -40,11 +40,14 @@ public class ListerQCMServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getSession().removeAttribute("qcm");;
 		
 		QCMService service = new QCMService();
 		List<QCMDTO> list = service.listerQCM();
 		request.setAttribute("listeQCM", list);
-
+		
+		request.getSession().invalidate();
+		
 		RequestDispatcher rd = request.getRequestDispatcher("choixQCM.jsp");
 		rd.forward(request, response);
 	}
