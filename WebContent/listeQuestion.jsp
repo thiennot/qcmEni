@@ -11,18 +11,18 @@
 <link media="all" rel="stylesheet" href="./theme/style.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-		crossorigin="anonymous">
-		<script
-			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-			crossorigin="anonymous"></script>
-		<script href="./theme/script.js"></script>
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+crossorigin="anonymous">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+crossorigin="anonymous">
+<script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+crossorigin="anonymous"></script>
+<script src="./theme/script.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -31,7 +31,7 @@
 				<ul class="list-group fixe">					
 					<%int i = 1; %>
 					<c:forEach var="question" items="${qcm.lesQuestions}">
-						<a href="#question<%= i %>"><li class="list-group-item">Question <%= i %><span class="badge">je sais pas</span></li></a>		
+						<a href="#question<%= i %>"><li class="list-group-item">Question <%= i %><span class="badge" id="etat<%= i %>">Non répondu</span></li></a>		
 							<%i++; %>
 					</c:forEach>
 					
@@ -40,7 +40,7 @@
 			<div class="col-sm-6">
 				<h1 class="formListQcm">Répondre aux questions</h1>
 				<div class="row">
-					<form action="CalculResultatServlet">
+					<form action="CalculResultatServlet" method="post">
 						<%int j = 1; %>
 						<c:forEach var="question" items="${qcm.lesQuestions}">
 							<fieldset class="listeQuestion-border"
@@ -51,15 +51,15 @@
 									</div>
 									<div class="col-md-2 col-sm-3">
 										<div class="checkbox">
-											<label><input type="checkbox"
+											<label><input type="checkbox" id="idFav<%= j %>"  onClick="favQuestion(<%= j %>)"
 												value="${question.idQuestion }">Favori</label>
 										</div>
 									</div>
 								</div>
 								<c:forEach var="reponse" items="${question.propositions}">
 									<div class="${question.balise }">
-										<label><input type="${question.balise }" value=""
-											name="question${question.idQuestion }" />${reponse.libelle }</label>
+										<label><input type="${question.balise }" id="idQuestion<%= j %>" onClick="repondQuestion(<%= j %>);" value=""
+											name="question${question.idQuestion }[]" />${reponse.libelle }</label>
 									</div>
 								</c:forEach>
 							</fieldset>			
