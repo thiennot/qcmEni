@@ -1,5 +1,6 @@
 package fr.eni.qcm.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -44,6 +45,10 @@ public class Test {
 	 */
 	private List<Section> sections;
 
+	public Test() {
+		this.sections = new ArrayList<Section>();
+	}
+	
 	/**
 	 * @return the idTest
 	 */

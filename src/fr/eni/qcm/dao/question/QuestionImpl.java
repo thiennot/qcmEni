@@ -20,6 +20,7 @@ class QuestionImpl implements IQuestion{
 		Connection connection = ConnectionBDD.getConnection();
 		String sqlQuestion = "SELECT * FROM randomizeQuestion(?)";
 		String sqlProposition = "SELECT * FROM proposition where idQuestion = ?";
+		String sqlQuestionTirage = "INSERT INTO question_tirage values(?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement statement = connection.prepareStatement(sqlQuestion);
@@ -39,6 +40,15 @@ class QuestionImpl implements IQuestion{
 				while(resultSetProposition.next()) {
 					result.get(result.size() - 1).getPropositions().add(buildProposition(resultSetProposition));
 				}
+				
+				statement = connection.prepareStatement(sqlQuestionTirage);
+				statement.setBoolean(1, false); //Est Marqué
+				statement.setInt(2, 0); //Id inscription TODO a modifier
+				statement.setInt(3, result.get(result.size() - 1).getIdQuestion()); //id question
+				statement.setString(4, null); //réponse donnée
+				statement.setInt(5, 0); //numero d'ordre
+				statement.execute();
+				
 			}
 			
 			connection.close();

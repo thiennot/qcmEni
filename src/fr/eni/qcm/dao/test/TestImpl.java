@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni.qcm.dao.ConnectionBDD;
+import fr.eni.qcm.entity.Section;
 import fr.eni.qcm.entity.Test;
+import fr.eni.qcm.entity.Theme;
 
 class TestImpl implements ITest{
 
@@ -17,14 +19,28 @@ class TestImpl implements ITest{
 		List<Test> result = new ArrayList<Test>();
 		
 		Connection connection = ConnectionBDD.getConnection();
-		String sql = "SELECT * FROM test";
+		String sqlTest = "SELECT * FROM test";
+		String sqlSection = "SELECT * FROM section_test s, theme t WHERE t.idtheme = s.idtheme AND idtest = ?";
 		
 		try {
-			PreparedStatement statement = connection.prepareStatement(sql);
-			ResultSet resultSet = statement.executeQuery();
+			PreparedStatement statement = connection.prepareStatement(sqlTest);
+			ResultSet resultTest = statement.executeQuery();
 			
-			while(resultSet.next()) {
-				result.add(buildTest(resultSet));
+			while(resultTest.next()) {
+				Test test = buildTest(resultTest);
+				
+				statement = connection.prepareStatement(sqlSection);
+				statement.setInt(1, test.getIdTest());
+				
+				ResultSet resultSection = statement.executeQuery();
+				
+				while(resultSection.next()) {
+					Section section = buildSection(resultSection);
+					test.getSections().add(section);
+				}
+				   
+				result.add(test);
+				
 			}
 			
 			connection.close();
@@ -34,6 +50,19 @@ class TestImpl implements ITest{
 		}
 		
 		return result;
+	}
+
+	private Section buildSection(ResultSet resultSection) throws SQLException {
+		Section section = new Section();
+		section.setNbQuestion(resultSection.getInt("nbquestionsatirer"));
+		
+		Theme theme = new Theme();
+		theme.setIdTheme(resultSection.getInt("idtheme"));
+		theme.setLibelle(resultSection.getString("libelle"));
+
+		section.setTheme(theme);
+		
+		return section;
 	}
 
 	@Override
