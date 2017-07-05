@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+ 
 import fr.eni.qcm.dao.ConnectionBDD;
 import fr.eni.qcm.entity.Proposition;
 import fr.eni.qcm.entity.Question;
@@ -16,7 +16,7 @@ class QuestionImpl implements IQuestion{
 	@Override
 	public List<Question> getQuestion(int idQcm) {
 		List<Question> result = new ArrayList<>();
-		
+		 
 		Connection connection = ConnectionBDD.getConnection();
 		String sqlQuestion = "SELECT * FROM randomizeQuestion(?)";
 		String sqlProposition = "SELECT * FROM proposition where idQuestion = ?";
