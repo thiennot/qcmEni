@@ -33,14 +33,13 @@ crossorigin="anonymous"></script>
 					<c:forEach var="question" items="${qcm.lesQuestions}">
 						<a href="#question<%= i %>"><li class="list-group-item">Question <%= i %><span class="badge" id="etat<%= i %>">Non répondu</span></li></a>		
 							<%i++; %>
-					</c:forEach>
-					
+					</c:forEach>					
 				</ul>
 			</div>
 			<div class="col-sm-6">
 				<h1 class="formListQcm">Répondre aux questions</h1>
 				<div class="row">
-					<form action="CalculResultatServlet" method="post">
+					<form action="CalculResultatServlet" method="get">
 						<%int j = 1; %>
 						<c:forEach var="question" items="${qcm.lesQuestions}">
 							<fieldset class="listeQuestion-border"
