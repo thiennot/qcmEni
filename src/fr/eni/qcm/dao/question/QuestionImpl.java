@@ -125,8 +125,9 @@ class QuestionImpl implements IQuestion{
 
 		Connection connection = ConnectionBDD.getConnection();
 		String sqlQuestion = "SELECT * FROM question where idquestion in (?)";
-		String sqlProposition = "SELECT * FROM propostion where idquestion = ? and estbonne = 1";
+		String sqlProposition = "SELECT * FROM proposition where idquestion = ? and estbonne = 1";
 		
+		//Supression des [ ] sur le toString d'une liste
 		String questionIn = questionsId.toString().substring(1, questionsId.size() - 1);
 		
 		try {

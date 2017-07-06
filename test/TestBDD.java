@@ -1,6 +1,8 @@
 import static org.junit.Assert.assertTrue;
 
 import java.sql.Connection;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -29,6 +31,15 @@ public class TestBDD {
 	public void testQuestion() {
 		IQuestion question = QuestionDao.getInstance();
 		//assertTrue(question.getQuestion(0).size() > 0 );
+	}
+	
+	@Test
+	public void testQuestionWithGoodProposition() {
+		IQuestion question = QuestionDao.getInstance();
+		Set<Integer> test = new HashSet<Integer>();
+		test.add(2);
+		test.add(6);
+		assertTrue(question.withGoodProposition(test) != null);
 	}
 	
 }
