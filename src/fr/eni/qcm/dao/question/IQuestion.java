@@ -2,6 +2,7 @@ package fr.eni.qcm.dao.question;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import fr.eni.qcm.entity.Question;
 
@@ -25,7 +26,13 @@ public interface IQuestion {
 	 * @return une {@link Question}
 	 */
 	Question findOne(int idQuestion);
-	
+
+	/**
+	 * Retourne une liste de question avec uniquement leurs bonne proposition
+	 * @param questionsId la liste de question
+	 * @return une liste de {@link Question}
+	 */
+	List<Question> withGoodProposition(Set<Integer> questionsId);
 	
 	/**
 	 * Sauvegarde les question et réponse choisie

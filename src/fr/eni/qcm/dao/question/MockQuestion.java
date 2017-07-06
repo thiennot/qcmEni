@@ -3,6 +3,7 @@ package fr.eni.qcm.dao.question;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import fr.eni.qcm.entity.Proposition;
 import fr.eni.qcm.entity.Question;
@@ -47,6 +48,12 @@ class MockQuestion implements IQuestion {
 
 	@Override
 	public void saveReponse(Map<Integer, List<Integer>> reponse) {
+	}
+
+	@Override
+	public List<Question> withGoodProposition(Set<Integer> questionsId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

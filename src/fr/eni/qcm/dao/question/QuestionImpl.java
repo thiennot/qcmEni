@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
  
 import java.util.Map;
+import java.util.Set;
 
 import fr.eni.qcm.dao.ConnectionBDD;
 import fr.eni.qcm.entity.Proposition;
@@ -32,7 +33,7 @@ class QuestionImpl implements IQuestion{
 			
 			//Boucle les questions
 			while(resultSetQuestion.next()) {
-				result.add(buildQuestion(resultSetQuestion));
+				Question question = buildQuestion(resultSetQuestion);
 				
 				statement = connection.prepareStatement(sqlProposition);
 				statement.setInt(1, resultSetQuestion.getInt("idQuestion"));
@@ -40,14 +41,16 @@ class QuestionImpl implements IQuestion{
 
 				//Ajout des proposition dans la question
 				while(resultSetProposition.next()) {
-					result.get(result.size() - 1).getPropositions().add(buildProposition(resultSetProposition));
+					question.getPropositions().add(buildProposition(resultSetProposition));
 				}
+				
+				result.add(question);
 				
 				statement = connection.prepareStatement(sqlQuestionTirage);
 				statement.setBoolean(1, false); //Est Marqué
 				statement.setInt(2, 0); //Id inscription TODO a modifier
 				statement.setInt(3, result.get(result.size() - 1).getIdQuestion()); //id question
-				statement.setString(4, null); //réponse donnée
+				statement.setBoolean(4, false); //réponse donnée
 				statement.setInt(5, 0); //numero d'ordre
 				statement.execute();
 				
@@ -103,9 +106,7 @@ class QuestionImpl implements IQuestion{
 			PreparedStatement statement = connection.prepareStatement(sql);
 			
 			for(Integer idQuestion : reponse.keySet()) {
-				System.err.println("ID QUESTION : " + idQuestion);
 				for(Integer idReponse : reponse.get(idQuestion)) {
-					System.out.println("ID REPONSE :  " + idReponse);
 					statement.setInt(1, idReponse);
 					statement.setInt(2, idQuestion);
 					statement.setInt(3, 0); //ID inscription a modifier TODO
@@ -116,5 +117,45 @@ class QuestionImpl implements IQuestion{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public List<Question> withGoodProposition(Set<Integer> questionsId) {
+		List<Question> result = new ArrayList<Question>();
+
+		Connection connection = ConnectionBDD.getConnection();
+		String sqlQuestion = "SELECT * FROM question where idquestion in (?)";
+		String sqlProposition = "SELECT * FROM propostion where idquestion = ? and estbonne = 1";
+		
+		String questionIn = questionsId.toString().substring(1, questionsId.size() - 1);
+		
+		try {
+			PreparedStatement statement = connection.prepareStatement(sqlQuestion);
+			statement.setString(1, questionIn);
+			
+			ResultSet resultSetQuestion = statement.executeQuery();
+			
+			while(resultSetQuestion.next()) {
+				Question question = buildQuestion(resultSetQuestion);
+				
+				statement = connection.prepareStatement(sqlProposition);
+				statement.setInt(1, question.getIdQuestion());
+				
+				ResultSet resultSetProposition = statement.executeQuery();
+				
+				while(resultSetProposition.next()) {
+					question.getPropositions().add(buildProposition(resultSetProposition));
+				}
+				
+				result.add(question);
+			}
+			
+			connection.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
 	}
 }

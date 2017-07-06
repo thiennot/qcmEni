@@ -2,6 +2,7 @@ package fr.eni.qcm.dao.question;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import fr.eni.qcm.entity.Question;
 
@@ -30,6 +31,11 @@ public class QuestionDao implements IQuestion {
 	@Override
 	public void saveReponse(Map<Integer, List<Integer>> reponse) {
 		instance.saveReponse(reponse);
+	}
+
+	@Override
+	public List<Question> withGoodProposition(Set<Integer> questionsId) {
+		return instance.withGoodProposition(questionsId);
 	}
 
 }
