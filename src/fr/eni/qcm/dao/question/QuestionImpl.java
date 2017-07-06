@@ -103,10 +103,13 @@ class QuestionImpl implements IQuestion{
 			PreparedStatement statement = connection.prepareStatement(sql);
 			
 			for(Integer idQuestion : reponse.keySet()) {
+				System.err.println("ID QUESTION : " + idQuestion);
 				for(Integer idReponse : reponse.get(idQuestion)) {
+					System.out.println("ID REPONSE :  " + idReponse);
 					statement.setInt(1, idReponse);
 					statement.setInt(2, idQuestion);
 					statement.setInt(3, 0); //ID inscription a modifier TODO
+					statement.execute();
 				}
 			}
 			
