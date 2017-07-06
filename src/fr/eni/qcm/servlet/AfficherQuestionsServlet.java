@@ -42,9 +42,8 @@ public class AfficherQuestionsServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		int idQCM = Integer.parseInt(request.getParameter("radioQCM"));
-		if(request.getSession().getAttribute("qcm")==null){
+		if(request.getSession().getAttribute("qcm")==null){ 
 			QuestionService service = new QuestionService();
 			PageQuestionDTO listQuestions = service.getQuestions(idQCM);
 			request.getSession().setAttribute("qcm",listQuestions);
