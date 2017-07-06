@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
  
+import java.util.Map;
+
 import fr.eni.qcm.dao.ConnectionBDD;
 import fr.eni.qcm.entity.Proposition;
 import fr.eni.qcm.entity.Question;
@@ -61,6 +63,12 @@ class QuestionImpl implements IQuestion{
 		return result;
 	}
 	
+
+	@Override
+	public Question findOne(int idQuestion) {
+		return null;
+	}
+	
 	private Proposition buildProposition(ResultSet resultSetProposition) throws SQLException {
 		Proposition proposition = new Proposition();
 		proposition.setCorrect(resultSetProposition.getBoolean("estbonne"));
@@ -68,12 +76,6 @@ class QuestionImpl implements IQuestion{
 		proposition.setIdProposition(resultSetProposition.getInt("idproposition"));
 		return proposition;
 	}
-
-	@Override
-	public Question findOne(int idQuestion) {
-		return null;
-	}
-	
 
 	/**
 	 * Construit un objet question
@@ -91,4 +93,25 @@ class QuestionImpl implements IQuestion{
 		return question;
 	}
 
+	@Override
+	public void saveReponse(Map<Integer, List<Integer>> reponse) {
+		Connection connection = ConnectionBDD.getConnection();
+		
+		String sql = "INSERT INTO reponse_tirage VALUES(?, ?, ?)";
+		
+		try {
+			PreparedStatement statement = connection.prepareStatement(sql);
+			
+			for(Integer idQuestion : reponse.keySet()) {
+				for(Integer idReponse : reponse.get(idQuestion)) {
+					statement.setInt(1, idReponse);
+					statement.setInt(2, idQuestion);
+					statement.setInt(3, 0); //ID inscription a modifier TODO
+				}
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

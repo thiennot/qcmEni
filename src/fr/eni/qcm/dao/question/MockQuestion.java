@@ -2,6 +2,7 @@ package fr.eni.qcm.dao.question;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import fr.eni.qcm.entity.Proposition;
 import fr.eni.qcm.entity.Question;
@@ -42,6 +43,10 @@ class MockQuestion implements IQuestion {
 		question.getPropositions().add(reponse1);
 		
 		return question;
+	}
+
+	@Override
+	public void saveReponse(Map<Integer, List<Integer>> reponse) {
 	}
 
 }

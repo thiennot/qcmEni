@@ -1,6 +1,7 @@
 package fr.eni.qcm.dao.question;
 
 import java.util.List;
+import java.util.Map;
 
 import fr.eni.qcm.entity.Question;
 
@@ -26,4 +27,9 @@ public interface IQuestion {
 	Question findOne(int idQuestion);
 	
 	
+	/**
+	 * Sauvegarde les question et réponse choisie
+	 * @param reponse cle : le numero de la question, valeur la liste des réponses
+	 */
+	void saveReponse(Map<Integer, List<Integer>> reponse);
 }

@@ -1,6 +1,7 @@
 package fr.eni.qcm.dao.question;
 
 import java.util.List;
+import java.util.Map;
 
 import fr.eni.qcm.entity.Question;
 
@@ -24,6 +25,11 @@ public class QuestionDao implements IQuestion {
 	@Override
 	public Question findOne(int idQuestion) {
 		return instance.findOne(idQuestion);
+	}
+
+	@Override
+	public void saveReponse(Map<Integer, List<Integer>> reponse) {
+		instance.saveReponse(reponse);
 	}
 
 }
