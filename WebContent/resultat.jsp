@@ -8,31 +8,46 @@
 <head>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type" />
 <title>QCM ENI</title>
-<link media="all" rel="stylesheet" href="./theme/style.css"
-	type="text/css" />
-<link rel="stylesheet"
-href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-crossorigin="anonymous">
-<link rel="stylesheet"
-href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-crossorigin="anonymous">
-<script
-src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-crossorigin="anonymous"></script>
+<link media="all" rel="stylesheet" href="./theme/style.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="./theme/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+
 </head>
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4">
-				<h1 class="formListQcm">Résultat du QCM</h1>
-								
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<h1 class="formListQcm">Choisir un QCM</h1>
+				<canvas id="myChart" width="400" height="400"></canvas>
+				<script>
+				var ctx = document.getElementById("myChart").getContext('2d');
+				var myChart = new Chart(ctx, {
+				    type: 'pie',
+				    data: {
+				        labels: ["Bonnes réponses", "Mauvaises réponses"],
+				        datasets: [{
+				            label: '# of Votes',
+				            data: ["${nbBon}", "${nbFaux}"],
+				            backgroundColor: [
+				                'rgba(0, 255, 0, 0.2)',
+				                'rgba(255, 0, 0, 0.2)'
+				            ],
+				            borderColor: [
+				                'rgba(0, 0, 0)',
+				                'rgba(0, 0, 0)'
+				            ],
+				            borderWidth: 1
+				        }]
+				    }
+				});
+				</script>
 			</div>
-			<div class="col-sm-4"></div>
+			<div class="col-sm-2"></div>
 		</div>
 	</div>
 	</div>

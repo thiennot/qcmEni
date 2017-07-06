@@ -18,8 +18,8 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
 				<h1 class="formListQcm">Choisir un QCM</h1>
 				<form action="AfficherQuestionsServlet">
 				<c:forEach var="qcm" items="${listeQCM}">
@@ -36,7 +36,7 @@
 				</div>
 				</form>
 			</div>
-			<div class="col-sm-4"></div>
+			<div class="col-sm-2"></div>
 		</div>
 	</div>
 </body>
