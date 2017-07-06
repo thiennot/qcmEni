@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
- 
 import java.util.Map;
 import java.util.Set;
 
@@ -19,22 +19,22 @@ class QuestionImpl implements IQuestion{
 	@Override
 	public List<Question> getQuestion(int idQcm) {
 		List<Question> result = new ArrayList<>();
-		 
+
 		Connection connection = ConnectionBDD.getConnection();
 		String sqlQuestion = "SELECT * FROM randomizeQuestion(?)";
 		String sqlProposition = "SELECT * FROM proposition where idQuestion = ?";
 		String sqlQuestionTirage = "INSERT INTO question_tirage values(?, ?, ?, ?, ?)";
-		
+
 		try {
 			PreparedStatement statement = connection.prepareStatement(sqlQuestion);
 			statement.setInt(1, idQcm);
 
 			ResultSet resultSetQuestion = statement.executeQuery();
-			
+
 			//Boucle les questions
 			while(resultSetQuestion.next()) {
 				Question question = buildQuestion(resultSetQuestion);
-				
+
 				statement = connection.prepareStatement(sqlProposition);
 				statement.setInt(1, resultSetQuestion.getInt("idQuestion"));
 				ResultSet resultSetProposition = statement.executeQuery();
@@ -43,9 +43,9 @@ class QuestionImpl implements IQuestion{
 				while(resultSetProposition.next()) {
 					question.getPropositions().add(buildProposition(resultSetProposition));
 				}
-				
+
 				result.add(question);
-				
+
 				statement = connection.prepareStatement(sqlQuestionTirage);
 				statement.setBoolean(1, false); //Est Marqué
 				statement.setInt(2, 0); //Id inscription TODO a modifier
@@ -53,25 +53,25 @@ class QuestionImpl implements IQuestion{
 				statement.setBoolean(4, false); //réponse donnée
 				statement.setInt(5, 0); //numero d'ordre
 				statement.execute();
-				
+
 			}
-			
+
 			connection.close();
-			
-			
+
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return result;
 	}
-	
+
 
 	@Override
 	public Question findOne(int idQuestion) {
 		return null;
 	}
-	
+
 	private Proposition buildProposition(ResultSet resultSetProposition) throws SQLException {
 		Proposition proposition = new Proposition();
 		proposition.setCorrect(resultSetProposition.getBoolean("estbonne"));
@@ -99,12 +99,12 @@ class QuestionImpl implements IQuestion{
 	@Override
 	public void saveReponse(Map<Integer, List<Integer>> reponse) {
 		Connection connection = ConnectionBDD.getConnection();
-		
+
 		String sql = "INSERT INTO reponse_tirage VALUES(?, ?, ?)";
-		
+
 		try {
 			PreparedStatement statement = connection.prepareStatement(sql);
-			
+
 			for(Integer idQuestion : reponse.keySet()) {
 				for(Integer idReponse : reponse.get(idQuestion)) {
 					statement.setInt(1, idReponse);
@@ -113,7 +113,7 @@ class QuestionImpl implements IQuestion{
 					statement.execute();
 				}
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -124,39 +124,48 @@ class QuestionImpl implements IQuestion{
 		List<Question> result = new ArrayList<Question>();
 
 		Connection connection = ConnectionBDD.getConnection();
-		String sqlQuestion = "SELECT * FROM question where idquestion in (?)";
+		StringBuilder sqlBuilder = new StringBuilder("SELECT * FROM question where idquestion in (");
+
+		for(int i = 0; i < questionsId.size(); i++) {
+			sqlBuilder.append("?");
+			if(i != questionsId.size() - 1) {
+				sqlBuilder.append(", ");
+			}
+		}
+		sqlBuilder.append(')');
+
 		String sqlProposition = "SELECT * FROM proposition where idquestion = ? and estbonne = 1";
-		
-		//Supression des [ ] sur le toString d'une liste
-		String questionIn = questionsId.toString().substring(1, questionsId.size());
-		
+
 		try {
-			PreparedStatement statement = connection.prepareStatement(sqlQuestion);
-			statement.setString(1, questionIn);
-			
+			PreparedStatement statement = connection.prepareStatement(sqlBuilder.toString());
+
+			int i = 1;
+			for (Iterator<Integer> it = questionsId.iterator(); it.hasNext(); ) {
+				statement.setInt(i++, it.next());
+			}
+
 			ResultSet resultSetQuestion = statement.executeQuery();
-			
+
 			while(resultSetQuestion.next()) {
 				Question question = buildQuestion(resultSetQuestion);
-				
+
 				statement = connection.prepareStatement(sqlProposition);
 				statement.setInt(1, question.getIdQuestion());
-				
+
 				ResultSet resultSetProposition = statement.executeQuery();
-				
+
 				while(resultSetProposition.next()) {
 					question.getPropositions().add(buildProposition(resultSetProposition));
 				}
-				
+
 				result.add(question);
 			}
-			
+
 			connection.close();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 		return result;
 	}
 }
