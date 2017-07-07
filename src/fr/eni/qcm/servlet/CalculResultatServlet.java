@@ -74,15 +74,16 @@ public class CalculResultatServlet extends HttpServlet {
 		//Sauvegarde
 		SauvegardeQuestionreponseService serviceSauve = new SauvegardeQuestionreponseService();
 		serviceSauve.sauvegarde(questionReponses);
-		/*
+		
 		//Récap
 		RecapQuestionReponseService recapService = new RecapQuestionReponseService();
-		res = recapService.recap(questionReponses);
+		int[] tab = recapService.recap(questionReponses);
 		
-		request.setAttribute("recap", res);
-		RequestDispatcher rd = request.getRequestDispatcher("listeQuestion.jsp");
+		request.setAttribute("nbBon", tab[0]);
+		request.setAttribute("nbFaux", tab[1]);
+		RequestDispatcher rd = request.getRequestDispatcher("resultat.jsp");
 		rd.forward(request, response);
-		*/
+		
 	}
 
 }
