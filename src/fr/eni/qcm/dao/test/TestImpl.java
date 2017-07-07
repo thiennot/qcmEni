@@ -40,7 +40,6 @@ class TestImpl implements ITest{
 				}
 				   
 				result.add(test);
-				
 			}
 			
 			connection.close();
@@ -59,7 +58,7 @@ class TestImpl implements ITest{
 		Theme theme = new Theme();
 		theme.setIdTheme(resultSection.getInt("idtheme"));
 		theme.setLibelle(resultSection.getString("libelle"));
-
+		
 		section.setTheme(theme);
 		
 		return section;
